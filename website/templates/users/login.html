@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Log In{% endblock %}
+
+  {% block content %}
+  <div style="margin-top: 80px; width:900px;">
+    <form method="post">
+      {% csrf_token %}
+        <fieldset>
+          <legend align='center'> Login Now </legend>
+          {{ form | crispy }}
+        </fieldset><br>
+        <button type="submit" class="btn btn-primary btn-lg" name="button"> login </button>
+    </form>
+  </div>
+  {% endblock %}

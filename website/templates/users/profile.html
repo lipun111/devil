@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Post View{% endblock %}
+
+  {% block content %}
+  <div style="margin-top: 80px; width:900px;">
+    <form method="post">
+      {% csrf_token %}
+        <fieldset>
+          <legend align='center'> Post Your View </legend>
+          {{ form | crispy }}
+        </fieldset><br>
+        <input type="submit" class="btn btn-primary btn-lg" value="save">
+    </form>
+  </div>
+  {% endblock %}
